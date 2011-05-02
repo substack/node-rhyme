@@ -42,6 +42,12 @@ Shows how to pronounce `word` using
 [CMU's pronouncing dictionary phonemes
 ](http://www.speech.cs.cmu.edu/cgi-bin/cmudict).
 
+r.syllables(word)
+-----------------
+
+Counts the syllables in `word` using the phonemes in `r.pronounce` and some
+heuristics.
+
 installation
 ============
 

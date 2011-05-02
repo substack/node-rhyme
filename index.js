@@ -11,6 +11,19 @@ module.exports = function (cb) {
     self.pronounce = function (word) {
         return dict[word.toUpperCase()];
     };
+
+    self.syllables = function (word) {
+        var pro = self.pronounce(word)[0];
+        
+        var cs = pro.filter(function(ph) {
+            return ['A', 'E', 'I', 'O', 'U'].every(function(l) {
+                return l != ph[0];
+            });
+        });
+
+        return Math.ceil((cs.length + (cs[cs.length - 1] == 'Z' ? -1 : 0)) / 2);
+
+    }
     
     self.rhyme = function (word) {
         word = word.toUpperCase();
