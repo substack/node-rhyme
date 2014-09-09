@@ -19,6 +19,20 @@ output:
     SHED SHEDD SHRED SLED SLEDD SPED SPREAD STEAD SWED SZWED TED THREAD TREAD
     WED WEDD WEHDE ZED
 
+
+example2
+=======
+
+    var rhyme = require('rhyme-plus');
+    rhyme(function (r) {
+        console.log(JSON.stringify(r.findRhymes(['bed', 'read', 'feed'])));
+    });
+
+output:
+
+    $ node examples/bed.js
+    [['BED', 'READ'], ['READ', 'FEED']]
+
 methods
 =======
 
@@ -52,6 +66,16 @@ r.alliteration(word)
 -----------------
 
 Returns alliterative words, which begin with the same syllable as `word`.
+
+r.doRhyme(word1, word2)
+-----------------
+
+Returns whether these words could rhyme (for example: read and feed, read and fed).
+
+r.findRhymes(words)
+-----------------
+
+Searches the words array for pairs of rhyming words. Returns an array of pairs.
 
 installation
 ============

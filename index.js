@@ -40,6 +40,43 @@ module.exports = function (cb) {
         return rhymes;
     };
 
+    self.doRhyme = function(word1, word2) {
+        // find words in rhyming dictionary
+        word1 = word1.toUpperCase();
+        word2 = word2.toUpperCase();
+        rhyme1 = dict[word1];
+        rhyme2 = dict[word2];
+
+        // reject if rhymes not possible
+        if (!rhyme1 || !rhyme2 || (rhyme1 === rhyme2)) {
+            return false;
+        }
+
+        var xs = rhyme1.reduce(function (acc, w) {
+            acc[active(w)] = true;
+            return acc;
+        }, {});
+
+        var foundRhyme = rhyme2.some(function (p) {
+            return xs[active(p)];
+        });
+
+        return foundRhyme;
+    };
+
+    self.findRhymes = function(words) {
+        // see if words rhyme
+        var rhymes = [];
+        for (var w = 0; w < words.length - 1; w++) {
+            for (var w2 = w + 1; w2 < words.length; w2++) {
+                if (this.doRhyme(words[w], words[w2])) {
+                    rhymes.push([words[w], words[w2]]);
+                }
+            }
+        }
+        return rhymes;
+    };
+
     self.alliteration = function (word) {
         word = word.toUpperCase();
         if (!dict[word]) return [];
