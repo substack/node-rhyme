@@ -1,4 +1,4 @@
-rhyme
+rhyme-plus
 =====
 
 A rhyming dictionary for your node.js.
@@ -6,7 +6,7 @@ A rhyming dictionary for your node.js.
 example
 =======
 
-    var rhyme = require('rhyme');
+    var rhyme = require('rhyme-plus');
     rhyme(function (r) {
         console.log(r.rhyme('bed').join(' '));
     });
@@ -22,10 +22,10 @@ output:
 methods
 =======
 
-rhyme(cb)
+rhyme(callback)
 ---------
 
-Read in the rhyme database. `cb` gets called with the rhyme handle.
+Read in the rhyme database. Callback function gets called with the rhyme handle.
 
 rhyme handle
 ============
@@ -48,9 +48,19 @@ r.syllables(word)
 Counts the syllables in `word` using the phonemes in `r.pronounce` and some
 heuristics.
 
+r.alliteration(word)
+-----------------
+
+Returns alliterative words, which begin with the same syllable as `word`.
+
 installation
 ============
 
 Using [npm](http://npmjs.org):
 
-    npm install rhyme
+    npm install rhyme-plus
+
+testing
+============
+
+Download rhyming dictionary using ```cd data && ./fetch.sh```

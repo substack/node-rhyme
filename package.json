@@ -1,10 +1,10 @@
 {
-    "name" : "rhyme",
+    "name" : "rhyme-plus",
     "description" : "A rhyming dictionary",
-    "version" : "0.0.3",
+    "version" : "0.0.4",
     "repository" : {
         "type" : "git",
-        "url" : "git://github.com/substack/node-rhyme.git"
+        "url" : "git://github.com/mapmeld/node-rhyme.git"
     },
     "main" : "./index.js",
     "keywords" : [
@@ -17,12 +17,9 @@
         "dictionary",
         "syllables",
         "pronounce",
-        "pronunciation"
+        "pronunciation",
+	"alliteration"
     ],
-    "directories" : {
-        "lib" : ".",
-        "examples" : "./examples"
-    },
     "scripts" : {
         "test" : "expresso"
     },
