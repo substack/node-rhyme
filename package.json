@@ -1,7 +1,7 @@
 {
     "name" : "rhyme-plus",
     "description" : "A rhyming dictionary",
-    "version" : "0.0.5",
+    "version" : "0.0.6",
     "repository" : {
         "type" : "git",
         "url" : "git://github.com/mapmeld/node-rhyme.git"

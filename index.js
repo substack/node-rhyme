@@ -4,7 +4,7 @@ var Hash = require('hashish');
 
 var dictFile = __dirname + '/data/cmudict.0.7a';
 
-module.exports = function (cb) {
+module.exports = function (cb, dictFileDirect) {
     var self = {};
     var dict = {};
 
@@ -109,7 +109,7 @@ module.exports = function (cb) {
         return rhymes;
     };
 
-    var s = fs.createReadStream(dictFile);
+    var s = fs.createReadStream(dictFileDirect || dictFile);
 
     s.on('end', function () {
         cb(self);
