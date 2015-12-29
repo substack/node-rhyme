@@ -1,2 +1,2 @@
 #!/bin/bash
-wget 'https://cmusphinx.svn.sourceforge.net/svnroot/cmusphinx/trunk/cmudict/cmudict.0.7a'
+curl -O 'https://svn.code.sf.net/p/cmusphinx/code/trunk/cmudict/cmudict.0.7a'
